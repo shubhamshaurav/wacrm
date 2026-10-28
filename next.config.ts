@@ -1,3 +1,4 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
@@ -72,6 +73,13 @@ const nextConfig: NextConfig = {
     resolveAlias: {
       "@app-messages": `./messages/${APP_LOCALE}.json`,
     },
+  },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@app-messages": path.resolve(process.cwd(), `messages/${APP_LOCALE}.json`),
+    };
+    return config;
   },
   // Emit a self-contained server bundle (.next/standalone) so the
   // Docker image can run without node_modules or the Next CLI.

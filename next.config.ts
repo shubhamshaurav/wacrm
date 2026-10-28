@@ -78,7 +78,7 @@ const nextConfig: NextConfig = {
   // Harmless outside Docker: `next start` keeps working as before.
   output: "standalone",
   experimental: {
-    turbopackPluginRuntimeStrategy: "workerThreads",
+    cpus: 1,
   },
   // Stop `next dev` from overwriting the repo's hand-written AGENTS.md.
   agentRules: false,

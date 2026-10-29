@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BestOpenSourceWhatsappCrmPage() {
+export default function BestWhatsappCrmPage() {
   const fullHtml = BLOG_HEADER + BEST_OSS_CONTENT + BLOG_FOOTER;
 
   return (
